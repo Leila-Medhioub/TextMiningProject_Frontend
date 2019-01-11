@@ -1,21 +1,49 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<header style="text-align:center">
+  <img alt="logo" width="140px" src="/assets/Images/logo.png">
+  <p class="about style-scope vt-home">
+    Language identification and sentiment analysis of short texts.
+  </p>
+</header>
+<div class="container">
+  <mat-tab-group dynamicHeight>
+    <mat-tab label="First">
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">find_in_page</mat-icon>
+        File
+      </ng-template>
+      <div class="upload-cercle">
+        <mat-icon style="height: 100px; width: 100px; font-size: 100px; color: #DBDBDB;">insert_drive_file</mat-icon>
+        <br>
+
+        <!-- <form>
+          <div class="form-group">
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+        </form> -->
+        <label class="import-file">
+          <input type="file" style="display: none;" (change)="onFileSelected($event)">
+          <div>{{selectedFileName}}</div>
+        </label>
+
+      </div>
+    </mat-tab>
+    <mat-tab label="Second">
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">search</mat-icon>
+        Search
+      </ng-template>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Enter a text..."></textarea>
+        </mat-form-field>
+      </form>
+      <div style="width:100%; text-align: center;">
+        <button mat-button class="analize-button">Analyze</button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
 
 <router-outlet></router-outlet>
